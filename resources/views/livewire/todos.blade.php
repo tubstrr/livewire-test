@@ -7,7 +7,7 @@
 
     <div class="container" x-data="{ loading: $wire.entangle('loading') }">
         <template x-if="loading">
-            <div x-show="loading" x-transition class="loading">Loading...</div>
+            <div class="loading">Loading...</div>
         </template>
 
         <ul>
