@@ -12,6 +12,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->group('web', [
+            \Silber\PageCache\Middleware\CacheResponse::class
+        ]);
+        $middleware->alias([
+            'page-cache' => \Silber\PageCache\Middleware\CacheResponse::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
